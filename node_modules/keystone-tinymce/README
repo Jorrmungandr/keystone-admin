@@ -1,5 +1,0 @@
-# TinyMCE plugin for Keystone
-
-It contains uploadimage plugin from KeyStone repo. 
-
-This plugin helps removal of TinyMCE files from the KeyStone repo and use it directly from tinymce package. tested with tinymce 4.8.1
