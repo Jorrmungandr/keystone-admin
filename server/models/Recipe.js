@@ -6,7 +6,6 @@ const path = require('path');
 const Recipe = new keystone.List('Recipe', {
   autokey: { path: 'slug', from: 'name', unique: true },
   defaultSort: '-createdAt',
-  ,
 });
 
 // Adding the option to add an image to our Recipe from 
