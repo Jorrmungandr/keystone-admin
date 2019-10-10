@@ -1,19 +1,14 @@
 module.exports = (app) => {
-	app.get('/', (req, res) => {
-		res.send(
-			`
-        <!doctype html>
-        <html>
-          <head>
-            <title>Keystone With React And Redux</title>
-          </head>
-          <body>
-            <div class="react-container">
-              <h1> Hello World </h1>
-            </div>
-          </body>
-        </html>
-        `
-		);
-	});
+  const path = require('path');
+  const keystone = require('keystone');
+
+  const importRoutes = keystone.importer(__dirname);
+  const routes = {
+    api: importRoutes('./api'),
+  };
+
+  app.get('/api/recipe/', keystone.middleware.api, routes.api.recipes.list);
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
 };
