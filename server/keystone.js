@@ -11,8 +11,8 @@ keystone.init({
   'cookie secret': '6D61822FBEAED8635A4A52241FEC3',
 });
 
-keystone.import('./server/models');
+keystone.import('./models');
 
-keystone.set('routes', require('./server/routes'));
+keystone.set('routes', require('./routes'));
 
 keystone.start();

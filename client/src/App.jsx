@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 export default class App extends Component {
   constructor(props) {
@@ -9,20 +9,30 @@ export default class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   (async () => {
-  //     const res = await axios.get('/api/recipe/');
-  //     this.setState({
-  //       content: res,
-  //     })
-  //   })();
-  // }
+  componentDidMount() {
+    (async () => {
+      const res = await axios.get('/api/recipes/');
+      console.log(res.data.recipe);
+      this.setState({
+        content: res.data.recipe,
+      })
+    })();
+  }
 
   render() {
     return (
       <section className="app">
-        {/* {this.state.content} */}
-        <h1>Hello React!!</h1>
+        <div>
+          {this.state.content.map((recipe) => (
+            <>
+              <p>{recipe._id}</p>
+              <p>{recipe.name}</p>
+              <p dangerouslySetInnerHTML={{ __html: recipe.cookingInstructions }}></p>
+              <img src={`/uploads/files/${recipe.image.filename}`} alt="" />
+            </>
+          ))}
+        </div>
+        <h2>Hello React!!</h2>
       </section>
     );
   }

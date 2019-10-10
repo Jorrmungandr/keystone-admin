@@ -7,8 +7,8 @@ module.exports = (app) => {
     api: importRoutes('./api'),
   };
 
-  app.get('/api/recipe/', keystone.middleware.api, routes.api.recipes.list);
+  app.get('/api/recipes/', keystone.middleware.api, routes.api.recipes.list);
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, '../public/files/index.html'));
   });
 };

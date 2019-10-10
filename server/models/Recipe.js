@@ -10,12 +10,12 @@ const Recipe = new keystone.List('Recipe', {
 const recipeImgStorage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
   fs: {
-    path: keystone.expandPath('server/public/img'),
+    path: keystone.expandPath('./public/uploads/files'),
     generateFilename: function (file, index) {
       return file.originalname;
     },
     whenExists: 'error',
-    publicPath: '/public/img',
+    publicPath: '/public/uploads/files',
   },
 });
 
