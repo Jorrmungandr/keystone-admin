@@ -2,7 +2,7 @@
   "name": "keystone-admin",
   "version": "1.0.0",
   "description": "",
-  "main": "keystone.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Jorrmungandr/keystone-admin#readme",
   "dependencies": {
     "@babel/preset-react": "^7.6.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "keystone": "^4.2.1",
     "underscore": "^1.9.1"
   },

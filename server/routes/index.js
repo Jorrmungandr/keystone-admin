@@ -1,14 +1,20 @@
+const path = require('path');
+const keystone = require('keystone');
+const cors = require('cors');
+
+const Example = keystone.list('Example');
+
 module.exports = (app) => {
-  const path = require('path');
-  const keystone = require('keystone');
+  app.use(cors());
 
-  const importRoutes = keystone.importer(__dirname);
-  const routes = {
-    api: importRoutes('./api'),
-  };
-
-  app.get('/api/recipes/', keystone.middleware.api, routes.api.recipes.list);
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/files/index.html'));
+  });
+
+  app.get('/api/examples', (req, res) => {
+    Example.model.find((err, items) => {
+      if (err) return res.apiError('database error', err);
+      res.send(items);
+    });
   });
 };

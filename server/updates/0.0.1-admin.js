@@ -3,8 +3,8 @@ const User = keystone.list('User');
 
 exports = module.exports = (done) => {
 	new User.model({
-		name: { first: 'admin', last: 'user' },
-		email: 'admin@keystonejs.com',
+		name: 'admin',
+		email: 'admin@gmail.com',
 		password: 'admin',
 		canAccessKeystone: true,
 	}).save(done);
