@@ -22,6 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "keystone": "^4.2.1",
+    "mongoose": "^5.9.18",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
