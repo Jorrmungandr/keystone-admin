@@ -2,7 +2,7 @@
 > A tutorial on how to create mongodb and cloudinary > accounts, install dependencies and run the project.
 
 ## 1. Install dependencies
-Run `yarn install` or `npm install` on both client and server folders, thsi command will install the project's dependencies.
+Run `yarn install` or `npm install` on both client and server folders, this command will install the project's dependencies.
 
 ## 2. Create MongoDB cluster and get the url
 1. If you don't have one, [create a mongodb account](https://www.mongodb.com/cloud), then create the cluster for this project.

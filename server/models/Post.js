@@ -2,11 +2,11 @@ const keystone = require('keystone');
 
 const { Types } = keystone.Field;
 
-const Example = new keystone.List('Examples');
+const Post = new keystone.List('Posts');
 
-Example.add({
+Post.add({
   name: { type: Types.Text, required: true, initial: true, index: true },
   image: { type: Types.CloudinaryImages, require: true, },
 });
 
-Example.register();
+Post.register();

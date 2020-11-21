@@ -7,7 +7,7 @@ function Example() {
   const [examples, setExamples] = useState([]);
 
   const loadExamples = async () => {
-    const res = await axios.get('http://localhost:3001/api/examples');
+    const res = await axios.get('http://localhost:3001/api/posts');
     setExamples(res.data);
   };
 
