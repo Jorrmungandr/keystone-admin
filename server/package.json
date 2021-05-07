@@ -23,7 +23,7 @@
     "dotenv": "^8.2.0",
     "keystone": "^4.2.1",
     "mongoose": "^5.10.15",
-    "underscore": "^1.11.0"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
